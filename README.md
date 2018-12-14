@@ -103,13 +103,13 @@ $tokenInfo = $accessToken->getToken();//setToken() if you want to use an exists 
 
 
 
-### Cache
+### Custom Cache
 
 access_token use cache,
 
 the cache implements  symfony/cache,
 
-for example
+for example:
 
 
 
@@ -117,14 +117,14 @@ for example
 <?php
 use Symfony\Component\Cache\Simple\RedisCache;
 
-// 创建 redis 实例
+// create redis instance
 $redis = new Redis();
 $redis->connect('redis_host', 6379);
 
-// 创建缓存实例
+// create redis cache instance
 $cache = new RedisCache($redis);
 
-// 替换应用中的缓存
+// rebind cache instance
 $app->rebind('cache', $cache);
 ````
 
