@@ -9,7 +9,7 @@ kolrank api sdk，http://open.koldata.net/  http://www.kolrank.com
 ## Installation
 
 ````shell
-composer require kolrank/api
+composer require kolrank/api:v0.1
 ````
 
 
