@@ -101,3 +101,30 @@ $accessToken = $app->access_token;//get token instance
 $tokenInfo = $accessToken->getToken();//setToken() if you want to use an exists token
 ````
 
+
+
+### Cache
+
+access_token use cache,
+
+the cache implements  symfony/cache,
+
+for example
+
+
+
+````php
+<?php
+use Symfony\Component\Cache\Simple\RedisCache;
+
+// 创建 redis 实例
+$redis = new Redis();
+$redis->connect('redis_host', 6379);
+
+// 创建缓存实例
+$cache = new RedisCache($redis);
+
+// 替换应用中的缓存
+$app->rebind('cache', $cache);
+````
+
